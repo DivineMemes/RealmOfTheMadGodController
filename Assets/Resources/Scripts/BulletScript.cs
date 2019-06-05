@@ -8,6 +8,12 @@ public class BulletScript : MonoBehaviour
     private void Awake()
     {
         StartCoroutine(shotlife());
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+    }
+
+    private void Update()
+    {
+        Debug.Log(gameObject.transform.rotation);
     }
 
     IEnumerator shotlife()
